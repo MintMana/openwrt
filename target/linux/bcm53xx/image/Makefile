@@ -424,28 +424,4 @@ define Device/tenda_ac9
 endef
 TARGET_DEVICES += tenda_ac9
 
-define Device/tplink_archer-c5-v2
-  DEVICE_VENDOR := TP-Link
-  DEVICE_MODEL := Archer C5
-  DEVICE_VARIANT := v2
-  DEVICE_PACKAGES := $(B43) $(USB2_PACKAGES)
-  IMAGES := bin
-  IMAGE/bin := append-rootfs | bcm53xx-tplink-safeloader
-  TPLINK_BOARD := ARCHER-C5-V2
-  BROKEN := y
-endef
-TARGET_DEVICES += tplink_archer-c5-v2
-
-define Device/tplink_archer-c9-v1
-  DEVICE_VENDOR := TP-Link
-  DEVICE_MODEL := Archer C9
-  DEVICE_VARIANT := v1
-  DEVICE_PACKAGES := $(USB3_PACKAGES)
-  IMAGES := bin
-  IMAGE/bin := append-rootfs | bcm53xx-tplink-safeloader
-  TPLINK_BOARD := ARCHERC9
-  BROKEN := y
-endef
-TARGET_DEVICES += tplink_archer-c9-v1
-
 $(eval $(call BuildImage))

@@ -1,0 +1,46 @@
+From c5aec5611aec8fb1ca68f68e41acaefccfc93c16 Mon Sep 17 00:00:00 2001
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Date: Thu, 9 Jun 2022 13:39:30 +0200
+Subject: ARM: dts: broadcom: align gpio-key node names with dtschema
+
+The node names should be generic and DT schema expects certain pattern
+(e.g. with key/button/switch).
+
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ arch/arm/boot/dts/bcm47189-tenda-ac9.dts | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+(limited to 'arch/arm/boot/dts/bcm47189-tenda-ac9.dts')
+
+diff --git a/arch/arm/boot/dts/bcm47189-tenda-ac9.dts b/arch/arm/boot/dts/bcm47189-tenda-ac9.dts
+index 07eb3a8287d65..55b92645b0f1f 100644
+--- a/arch/arm/boot/dts/bcm47189-tenda-ac9.dts
++++ b/arch/arm/boot/dts/bcm47189-tenda-ac9.dts
+@@ -59,19 +59,19 @@
+ 	gpio-keys {
+ 		compatible = "gpio-keys";
+ 
+-		rfkill {
++		button-rfkill {
+ 			label = "WiFi";
+ 			linux,code = <KEY_RFKILL>;
+ 			gpios = <&chipcommon 3 GPIO_ACTIVE_LOW>;
+ 		};
+ 
+-		restart {
++		button-restart {
+ 			label = "Reset";
+ 			linux,code = <KEY_RESTART>;
+ 			gpios = <&chipcommon 7 GPIO_ACTIVE_LOW>;
+ 		};
+ 
+-		wps {
++		button-wps {
+ 			label = "WPS";
+ 			linux,code = <KEY_WPS_BUTTON>;
+ 			gpios = <&chipcommon 9 GPIO_ACTIVE_LOW>;
+-- 
+cgit 
+
